@@ -16,6 +16,9 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1,
@@ -38,14 +41,282 @@ ol {
 }
 
 /* Кастомный скроллбар */
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgb(217 217 217 / 10%);
+  background: rgb(217 217 217 / 0.1);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #d9d9d9;
+}
+
+.content {
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: 711px 399px;
+  grid-template-rows: 534px;
+  align-items: flex-end;
+}
+
+.content__list-container {
+  height: 298px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.result__video-container {
+  width: 711px;
+  height: 386px;
+  position: relative;
+}
+
+.result__video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.search-form {
+  margin-top: 16px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-end;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__textfield {
+  background-color: transparent;
+  border-left: none;
+  border-right: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  width: 225px;
+  height: 27px;
+  color: #fff;
+  font-family: 'Fira Sans Condensed';
+  font-weight: 400;
+  font-style: regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+  border: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed';
+  font-weight: 400;
+  font-style: regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-bottom: 5px;
+}
+
+.search-form__textfield::placeholder {
+  font-family: 'Fira Sans Condensed';
+  font-weight: 400;
+  font-style: regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__label-checkbox {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.search-form__pseudo-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #fff;
+  background-color: transparent;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: '';
+  display: none;
+  background-color: #fff;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  margin: 1px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  display: block;
+}
+
+.search-form__label-checkbox:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.search-form__label-checkbox:has(.search-form__checkbox:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__details {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 26px;
+}
+
+.title {
+  font-family: Oswald;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 75px;
+  line-height: 94%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+}
+
+.content__video-card-title {
+  font-family: Oswald;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  max-width: 12ch; /* Примерно 12 символов */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content__video-card-description {
+  font-family: 'Fira Sans Condensed';
+  font-weight: 400;
+  font-style: regular;
+  font-size: 18px;
+  line-height: 16.2px;
+  letter-spacing: 0%;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content__video-card-description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.content__list-item {
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 1px;
+}
+
+.content__list-item:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.content__list-item:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__list-item:active {
+  background-color: #545050;
+}
+
+.button {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  font-family: 'Fira Sans Condensed';
+  font-weight: 700;
+  font-style: bold;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  width: 194px;
+  height: 34px;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.more-button {
+  margin-top: 30px;
+  width: 390px;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.preloader-template {
+  position: absolute;
+  inset: 0;
 }
